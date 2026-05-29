@@ -1,0 +1,13 @@
+name: Pipeline de Testes
+
+on: [push]
+
+jobs:
+  compilar-e-testar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compilando o código
+        run: gcc test.c -o verificador
+      - name: Rodando o teste
+        run: ./verificador
